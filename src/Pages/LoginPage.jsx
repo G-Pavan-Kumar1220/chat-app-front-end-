@@ -38,7 +38,7 @@ function LoginPage() {
         setIsLogin(true);
       }
     } catch (err) {
-      alert("use another email user already exist");
+      alert("try to ");
       console.error(err);
     } finally {
       setLoading(false);

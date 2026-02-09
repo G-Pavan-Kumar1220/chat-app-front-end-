@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import socket from "../sockets/socket";
+import { BASE_URL } from "../api/Api";
 
 const GROUP_ID = "123"; // must match backend groupId
 
@@ -24,7 +25,7 @@ const ChatBoard = ({ current_user }) => {
     if (user.name === "unknown") return;
 
     // Load OLD messages
-    fetch(`http://localhost:5000/api/group/messages/${GROUP_ID}`)
+    fetch(`${BASE_URL}/group/messages/${GROUP_ID}`)
       .then((res) => res.json())
       .then((data) => setGroupMessages(data));
 
